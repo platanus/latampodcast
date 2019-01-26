@@ -1,0 +1,11 @@
+baseurl = "http://example.org"
+title = "Latam Podcast"
+author = ""
+canonifyurls = true
+paginate = 3
+theme = "aether"
+
+[params]
+brand = "LatamPodcast"
+description = "Mejores Podcast Latinoamericanos"
+bgimg = "img/ignasi_pattern_s.png"
