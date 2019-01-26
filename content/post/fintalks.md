@@ -12,6 +12,5 @@ dropCap: true
 displayInMenu: false
 displayInList: true
 spotify: https://open.spotify.com/show/7m8fExrANZeo7qvN3rbbgN
-draft: true
 
 ---
