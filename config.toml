@@ -1,4 +1,4 @@
-baseurl = "http://www.latampodcast.com"
+baseurl = "https://www.latampodcast.com"
 title = "Latam Podcast"
 author = ""
 canonifyurls = true
