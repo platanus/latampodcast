@@ -46,4 +46,8 @@
       </button>
     </div>
   </nav>
+  <%= @sections && @sections.each do |section| %>
+    <h1> <%= section[:title] %> </h1>
+    <p> <%= section[:subtitle] %> </p>
+  <% end %>
 </div>

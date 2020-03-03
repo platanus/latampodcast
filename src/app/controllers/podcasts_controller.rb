@@ -44,7 +44,7 @@ class PodcastsController < ApplicationController
   end
 
   private
-  def set_podacast
+  def set_podcast
     @podcast = Podcast.find(params[:id])
   end
 
