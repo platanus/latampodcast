@@ -2,8 +2,8 @@ class PodcastsController < ApplicationController
   before_action :admin_user, only: [:edit]
 
   def show
-    if (Podcast.find_by_id(params[:id]))
-      podcast = User.find_by_id(params[:id])
+    podcast = Podcast.find_by_id(params[:id]);
+    if (podcast)
       redirect_to podcast.url
     else
       redirect_to root_path, :notice => "Podcast not found"
