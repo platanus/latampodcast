@@ -1,5 +1,6 @@
 class PodcastsController < ApplicationController
-  before_action :admin_user, only: [:edit]
+  before_action :set_podcast, only: [:edit, :show, :update, :destroy]
+  before_action :admin_user, only: [:create, :new, :destroy, :update]
 
   def show
     podcast = Podcast.find_by_id(params[:id]);
@@ -10,8 +11,29 @@ class PodcastsController < ApplicationController
     end
   end
 
-  def edit
+  def new
+    @podcast = Podcast.new
+  end
 
+  def create
+    @podcast = Podcast.new(podcast_params)
+  end
+
+  def update
+    if @podcast.update(podcast_params)
+      flash[:success] = "Podcast was updated successfully"
+      redirect_to podcast_path(@podcast)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    if (@podcast)
+      @podcast.destroy
+      flash[:danger] = "Podcast was destroyed"
+    end
+    redirect_to podcasts_path
   end
 
   def admin_user
@@ -21,5 +43,13 @@ class PodcastsController < ApplicationController
     end
   end
 
+  private
+  def set_podacast
+    @podcast = Podcast.find(params[:id])
+  end
+
+  def podcast_params
+    params.require(:podcast).permit(:title, :url)
+  end
 
 end
