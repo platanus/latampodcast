@@ -46,8 +46,25 @@
       </button>
     </div>
   </nav>
+  <%= @podcasts && @podcasts.each do |podcast| %>
+    <div class="podcast-container">
+      <img src="https://picsum.photos/200/300" alt="" height="30" width="30" />
+      <div class="podcast-text-container">
+        <h2><%= podcast.title %></h2>
+        <p><%= podcast.description || 'Description' %></p>
+        <div class="podcast-info-footer">
+          <p><%= podcast.createdAt || 'n/a' %></p>
+          <p><%= podcast.tag || '#Features' %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
   <%= @sections && @sections.each do |section| %>
-    <h1> <%= section[:title] %> </h1>
+    <h2> <%= section[:title] %> </h2>
     <p> <%= section[:subtitle] %> </p>
+  <% end %>
+  <%= @subsections && @subsections.each do |subsection| %>
+    <h3> <%= subsection[:title] %> </h3>
+    <p> <%= subsection[:subtitle] %> </p>
   <% end %>
 </div>

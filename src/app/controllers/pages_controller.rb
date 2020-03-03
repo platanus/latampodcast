@@ -1,6 +1,5 @@
 class PagesController < ActionController::Base
   def home
-    puts 'indeeeeex'
     @podcasts = Podcast.all
     @sections = [
       {
@@ -14,14 +13,13 @@ class PagesController < ActionController::Base
       {
         title: 'Los mejores podcast disponibles en español',
         subtitle: 'Aquí seleccionamos los mejores programas de audio grabados para que escuches en tu teléfono móvil.',
-      },
-    ]
+      }
+    ];
     @subsections = [
       {
         title: 'Si conoces alguno que merece estar en esta lista, envíalo a podcasts@latampodcast.com',
         subtitle: 'Lo revisaremos y si pasa nuestro filtro de calidad, lo listaremos aquí junto a los demás.',
-      },
-    ]
-    return @podcasts, @sections, @subsections
+      }
+    ];
   end
 end
