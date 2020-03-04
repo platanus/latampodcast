@@ -7,11 +7,13 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("packs/podcasts/form")
-require("packs/pages/home")
 
 import "bootstrap"
+
 import "../stylesheets/application"
+
+import "./podcasts/form"
+import "./pages/home"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"').tooltip();

@@ -2,7 +2,8 @@
 
 @import "./theme/colors";
 @import "./podcasts/form";
-@import './pages/home';
+@import "./pages/home";
+@import "./devise/sessions";
 
 h1, h2, h3, h4, h5 h6, p, span, div {
   word-break: break-word;
