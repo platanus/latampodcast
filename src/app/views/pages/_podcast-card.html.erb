@@ -1,6 +1,6 @@
 <%= @podcasts.each do |podcast| %>
   <div class="podcast-container">
-    <img src="https://picsum.photos/250/180" alt="" height="180" width="250" />
+    <%= image_tag("#{podcast.image_slug}") %>
     <div class="podcast-text-container">
       <h2><%= podcast.title %></h2>
       <p><%= podcast.description %></p>
