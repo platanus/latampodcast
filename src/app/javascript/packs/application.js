@@ -13,7 +13,6 @@ import "bootstrap"
 import "../stylesheets/application"
 
 import "./podcasts/form"
-import "./pages/home"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"').tooltip();
