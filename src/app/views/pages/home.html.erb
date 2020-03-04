@@ -1,0 +1,49 @@
+<style>
+
+.home-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.top-nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.burger-button {
+  margin-top: 20px;
+  background: none;
+  border: unset;
+  height: 33px;
+  width: 33px;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.burger-span {
+  width: 33px;
+  height: 4px;
+  background-color: black;
+  border-radius: 5px;
+  display: block;
+}
+
+</style>
+
+<div class="home-container">
+  <nav class="top-nav">
+    <div>
+      <h1>LatamPodcast</h1>
+      <p>Un simple listado con los mejores podcast latinoamericanos en español.</p>
+    </div>
+    <div>
+      <button class="burger-button">
+        <span class="burger-span"></span>
+        <span class="burger-span"></span>
+      </button>
+    </div>
+  </nav>
+</div>
