@@ -16,7 +16,12 @@ class PodcastsController < ApplicationController
   end
 
   def create
-    @podcast = Podcast.new(podcast_params)
+    new_params = podcast_params
+    new_params[:user_id] = current_user.id
+    puts new_params
+    @podcast = Podcast.create(new_params)
+
+    redirect_to root_path
   end
 
   def update
@@ -51,6 +56,6 @@ class PodcastsController < ApplicationController
   end
 
   def podcast_params
-    params.require(:podcast).permit(:title, :url)
+    params.require(:podcast).permit(:title, :url, :description, :image_slug)
   end
 end
