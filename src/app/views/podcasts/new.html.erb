@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="title-form">
+    Create new podcast
+  </div>
+  <%= form_for(@podcast, url: podcasts_create_path, :html => {role: "form", class: "form-horizontal"}) do |f| %>
+    <div class="field">
+      <%= f.label :add_title %>
+      <%= f.text_field :title, autofocus: true, class: "form-control text-field-input", placeholder: "Add podcast title" %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description, autofocus: true, class: "form-control text-field-input text-area-input", placeholder: "Add podcast description" %>
+    </div>
+    <div class="field">
+      <%= f.label :podcast_url %>
+      <%= f.text_field :url, autofocus: true, class: "form-control text-field-input", placeholder: "Add podcast url" %>
+    </div>
+    <div class="field">
+      <%= f.label :image_slug %>
+      <%= f.text_field :image_slug, autofocus: true, class: "form-control text-field-input", placeholder: "Add image name" %>
+    </div>
+    <br>
+    <div class="form-footer">
+      <%= f.submit "Submit", class: 'btn btn-primary' %>
+      <%= link_to "Cancel", root_path, class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+</div>

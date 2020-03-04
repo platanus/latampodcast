@@ -1,0 +1,14 @@
+<% @podcasts.each do |podcast| %>
+  <a href="<%= podcast.url || '#' %>" class="podcast-container">
+    <%= image_tag("#{podcast.image_slug}") %>
+    <div class="podcast-text-container">
+      <h2><%= podcast.title %></h2>
+      <p><%= podcast.description %></p>
+      <div class="podcast-info-footer">
+        <p><%= 'Posted Dec 19, 2018' %></p>
+        <span></span>
+        <p><%= '#Features' %></p>
+      </div>
+    </div>
+  </a>
+<% end %>

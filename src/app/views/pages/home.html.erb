@@ -1,7 +1,19 @@
 <style>
 
+h1, h2, h3, h4, h5 h6, p, span, div {
+  word-break: break-word;
+  color: #3a3b3c;
+  font-family: 'LatoLatinWeb',Avenir,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.body-wrapper {
+  margin: -10px;
+  padding: 10px;
+  background-color: rgb(236, 237, 239);
+}
+
 .home-container {
-  max-width: 680px;
+  max-width: 780px;
   margin: 0 auto;
 }
 
@@ -9,6 +21,23 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.top-nav .title-wrapper {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.top-nav .title-wrapper h1 {
+  font-size: 2em;
+}
+
+.top-nav p.subtitle {
+  text-align: center;
+  color: #7a7b7c;
+  font-size: 1.25em;
+  margin-bottom: 25px;
 }
 
 .burger-button {
@@ -31,19 +60,93 @@
   display: block;
 }
 
-</style>
+.podcast-wrapper {
+  margin-bottom: 30px;
+}
 
-<div class="home-container">
-  <nav class="top-nav">
-    <div>
-      <h1>LatamPodcast</h1>
-      <p>Un simple listado con los mejores podcast latinoamericanos en español.</p>
+.podcast-wrapper-hover {
+  transform: translate(0, -5px);
+}
+
+.podcast-wrapper a {
+  text-decoration: none;
+}
+
+.podcast-wrapper > a:nth-child(even){
+  margin: 20px 0;
+}
+
+.podcast-container {
+  display: flex;
+  align-items: flex-start;
+  max-height: 270px;
+  box-shadow: 0px 0px 10px 4px #e6e6e6;
+  border: 1px solid #e6e6e6;
+  background-color: white;
+}
+
+.podcast-container img {
+  height: 100%;
+  width: 270px;
+}
+
+.podcast-text-container {
+  height: 230px;
+  margin: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 60%;
+}
+
+.podcast-text-container p, h2 {
+  margin: 0;
+}
+
+.podcast-info-footer {
+  display: flex;
+  align-items: center;
+  max-height: 20px;
+  margin-bottom: 10px;
+}
+
+.podcast-info-footer * {
+  font-size: 13px;
+  color: #7a7b7c;
+}
+
+.podcast-info-footer span {
+  border-left: thin solid #7a7b7c;
+  width: 0px;
+  height: 15px;
+  margin: 0 30px;
+}
+
+.sections-wrapper p {
+  font-size: 1.125em;
+}
+
+</style>
+<div class="body-wrapper">
+  <div class="home-container">
+    <nav class="top-nav">
+      <div class="title-wrapper">
+        <h1>LatamPodcast</h1>
+        <p class="subtitle">Un simple listado con los mejores podcast latinoamericanos en español.</p>
+      </div>
+      <div>
+        <button class="burger-button">
+          <span class="burger-span"></span>
+          <span class="burger-span"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="podcast-wrapper">
+      <%= render 'podcast-card' %>
     </div>
-    <div>
-      <button class="burger-button">
-        <span class="burger-span"></span>
-        <span class="burger-span"></span>
-      </button>
+    <div class="sections-wrapper">
+      <%= render 'sections' %>
+      <%= render 'subsections' %>
     </div>
-  </nav>
+  </div>
 </div>

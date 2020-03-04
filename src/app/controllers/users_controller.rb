@@ -1,26 +1,21 @@
 class UsersController < ApplicationController
-  before_action :admin_user, only: [:edit]
+  before_action :admin_user, only: %i[edit]
 
   def show
-    if (User.find_by_id(params[:id]))
-      @user = User.find_by_id(params[:id])
+    @user = User.find_by_id(params[:id])
+    if @user
       @param = params[:param]
       # redirect_to users_path(@user)
     else
-      redirect_to root_path, :notice => "User not found"
+      redirect_to root_path, notice: 'User not found'
     end
-  end
-
-  def edit
-
   end
 
   def admin_user
-    unless isAdmin? || current_user and current_user.id == params[:id]
-      flash[:danger] = "You have not permission to do this."
-      redirect_to root_path
-    end
+    is_permitted = isAdmin? || (current_user && current_user.id == params[:id])
+    return nil unless is_permitted
+
+    flash[:danger] = 'You have not permission to do this.'
+    redirect_to root_path
   end
-
-
 end
