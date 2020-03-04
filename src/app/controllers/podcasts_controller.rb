@@ -37,7 +37,7 @@ class PodcastsController < ApplicationController
   end
 
   def admin_user
-    is_permitted = isAdmin? || current_user && current_user.id == params[:id]
+    is_permitted = is_admin? || current_user && current_user.id == params[:id]
     return nil unless is_permitted
 
     flash[:danger] = 'You have not permission to do this.'
