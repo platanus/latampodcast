@@ -1,12 +1,13 @@
-<%= @podcasts && @podcasts.each do |podcast| %>
+<%= @podcasts.each do |podcast| %>
   <div class="podcast-container">
     <img src="https://picsum.photos/250/180" alt="" height="180" width="250" />
     <div class="podcast-text-container">
       <h2><%= podcast.title %></h2>
       <p><%= podcast.description %></p>
       <div class="podcast-info-footer">
-        <p><% 'n/a' %></p>
-        <p><% '#Features' %></p>
+        <p><%= 'Posted Dec 19, 2018' %></p>
+        <span></span>
+        <p><%= '#Features' %></p>
       </div>
     </div>
   </div>

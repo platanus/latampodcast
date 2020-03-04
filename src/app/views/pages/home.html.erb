@@ -1,5 +1,16 @@
 <style>
 
+h1, h2, h3, h4, h5 h6, p, span, div {
+  word-break: break-word;
+  font-family: 'LatoLatinWeb',Avenir,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.body-wrapper {
+  margin: -10px;
+  padding: 10px;
+  background-color: rgb(236, 237, 239);
+}
+
 .home-container {
   max-width: 680px;
   margin: 0 auto;
@@ -31,27 +42,74 @@
   display: block;
 }
 
+.podcast-wrapper > div:nth-child(even){
+  margin: 20px 0;
+}
+
 .podcast-container {
   display: flex;
+  align-items: flex-start;
+  max-height: 300px;
+  box-shadow: 0px 0px 10px 4px #e6e6e6;
+  border: 1px solid #e6e6e6;
+  background-color: white;
+}
+
+.podcast-text-container {
+  height: 230px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.podcast-text-container p, h2 {
+  margin: 0;
+}
+
+.podcast-info-footer {
+  display: flex;
   align-items: center;
+  max-height: 20px;
+}
+
+.podcast-info-footer * {
+  font-size: 13px;
+  color: #7a7b7c;
+}
+
+.podcast-info-footer span {
+  border-left: thin solid #7a7b7c;
+  width: 0px;
+  height: 15px;
+  margin: 0 30px;
+}
+
+.sections-wrapper p {
+  font-size: 1.125em;
 }
 
 </style>
-
-<div class="home-container">
-  <nav class="top-nav">
-    <div>
-      <h1>LatamPodcast</h1>
-      <p>Un simple listado con los mejores podcast latinoamericanos en español.</p>
+<div class="body-wrapper">
+  <div class="home-container">
+    <nav class="top-nav">
+      <div>
+        <h1>LatamPodcast</h1>
+        <p>Un simple listado con los mejores podcast latinoamericanos en español.</p>
+      </div>
+      <div>
+        <button class="burger-button">
+          <span class="burger-span"></span>
+          <span class="burger-span"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="podcast-wrapper">
+      <%= render 'podcast-card' %>
     </div>
-    <div>
-      <button class="burger-button">
-        <span class="burger-span"></span>
-        <span class="burger-span"></span>
-      </button>
+    <div class="sections-wrapper">
+      <%= render 'sections' %>
+      <%= render 'subsections' %>
     </div>
-  </nav>
-  <%= render 'podcast-card' %>
-  <%= render 'sections' %>
-  <%= render 'subsections' %>
+  </div>
 </div>
