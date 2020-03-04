@@ -1,0 +1,57 @@
+.login-wrapper {
+  margin: 10vh auto;
+  max-width: 500px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 10px 1px #e6e6e6;
+  height: 45vh;
+  max-height: 320px;
+  padding: 40px;
+
+  .panel-body {
+    height: 170px;
+    div.actions {
+      margin-top: 20px;
+    }
+  }
+
+  form {
+    margin-top: 20px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+.signup-wrapper {
+  #error_explanation h2 {
+    font-size: 17px;
+    color: #ee4848;
+  }
+  margin: 10vh auto;
+  max-width: 500px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 10px 1px #e6e6e6;
+  height: 70vh;
+  max-height: 500px;
+  padding: 40px;
+
+  .panel-body {
+    height: auto;
+  }
+
+  .actions {
+    margin-bottom: 20px;
+  }
+
+  form {
+    margin-top: 20px;
+    height: 90%;
+    .field:nth-child(even) {
+      margin: 20px 0;
+    }
+    .field label, .password{
+      width: 50%;
+    }
+  }
+}

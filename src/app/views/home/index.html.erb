@@ -126,8 +126,85 @@ h1, h2, h3, h4, h5 h6, p, span, div {
   font-size: 1.125em;
 }
 
+.modal-backdrop.show {
+  display: block;
+}
+
+.modal-backdrop {
+  z-index: 30;
+  height: 100%;
+  margin: -10px;
+  padding: 10px;
+  width: 100%;
+  background-color: #000;
+  opacity: .9;
+  position: fixed;
+  visibility: visible;
+  border: 1px solid red;
+  display: none;
+}
+
+.modal-backdrop .backdrop-list a {
+ text-decoration: none;
+}
+
+.modal-backdrop .btn {
+  position: absolute;
+  right: 200px;
+  top: 50px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 45px;
+}
+
+.modal-backdrop .btn:hover {
+  cursor: pointer;
+}
+
+.modal-backdrop ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: -150px;
+}
+
+.modal-backdrop li {
+  font-size: 40px;
+  list-style-type: none;
+  color: white;
+}
+
 </style>
+
+<script>
+const onClickHamburger = () => {
+  const nav = this.document.getElementById('nav-backdrop');
+  nav.classList.add('show');
+}
+
+const onClickCross = () => {
+  const nav = this.document.getElementById('nav-backdrop');
+  nav.classList.remove('show');
+}
+
+</script>
+
 <div class="body-wrapper">
+  <div class="modal-backdrop" id="nav-backdrop">
+    <button class="btn btn-default" onclick="onClickCross()">X</button>
+    <ul class="backdrop-list">
+      <% if current_user%>
+        <a href="/podcasts/new"><li>New podcast</li></a>
+        <a href="/users/sign_out"><li>Logout</li></a>
+      <% else %>
+        <a href="/users/sign_in"><li>Login</li></a>
+        <a href="/users/sign_up"><li>Sign Up</li></a>
+      <% end %>
+    </ul>
+  </div>
   <div class="home-container">
     <nav class="top-nav">
       <div class="title-wrapper">
@@ -135,7 +212,7 @@ h1, h2, h3, h4, h5 h6, p, span, div {
         <p class="subtitle">Un simple listado con los mejores podcast latinoamericanos en español.</p>
       </div>
       <div>
-        <button class="burger-button">
+        <button class="burger-button" id="burger-button" onclick="onClickHamburger()">
           <span class="burger-span"></span>
           <span class="burger-span"></span>
         </button>

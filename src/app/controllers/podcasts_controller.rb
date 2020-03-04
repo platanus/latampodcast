@@ -18,7 +18,6 @@ class PodcastsController < ApplicationController
   def create
     new_params = podcast_params
     new_params[:user_id] = current_user.id
-    puts new_params
     @podcast = Podcast.create(new_params)
 
     redirect_to root_path
@@ -42,11 +41,9 @@ class PodcastsController < ApplicationController
   end
 
   def admin_user
-    is_permitted = is_admin? || current_user && current_user.id == params[:id]
-    return nil unless is_permitted
+    is_permited = is_admin? || current_user
 
-    flash[:danger] = 'You have not permission to do this.'
-    redirect_to root_path
+    redirect_to root_path unless is_permited
   end
 
   private

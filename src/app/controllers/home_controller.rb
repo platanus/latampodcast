@@ -1,5 +1,5 @@
-class PagesController < ActionController::Base
-  def home
+class HomeController < ActionController::Base
+  def index
     @podcasts = Podcast.all
     # To Do: Move sections and subsections to DB
     @sections = [
