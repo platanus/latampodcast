@@ -2,6 +2,7 @@
 
 h1, h2, h3, h4, h5 h6, p, span, div {
   word-break: break-word;
+  color: #3a3b3c;
   font-family: 'LatoLatinWeb',Avenir,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
@@ -12,7 +13,7 @@ h1, h2, h3, h4, h5 h6, p, span, div {
 }
 
 .home-container {
-  max-width: 880px;
+  max-width: 780px;
   margin: 0 auto;
 }
 
@@ -20,6 +21,23 @@ h1, h2, h3, h4, h5 h6, p, span, div {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.top-nav .title-wrapper {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.top-nav .title-wrapper h1 {
+  font-size: 2em;
+}
+
+.top-nav p.subtitle {
+  text-align: center;
+  color: #7a7b7c;
+  font-size: 1.25em;
+  margin-bottom: 25px;
 }
 
 .burger-button {
@@ -62,7 +80,7 @@ h1, h2, h3, h4, h5 h6, p, span, div {
 
 .podcast-text-container {
   height: 230px;
-  padding: 30px;
+  margin: 25px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -100,9 +118,9 @@ h1, h2, h3, h4, h5 h6, p, span, div {
 <div class="body-wrapper">
   <div class="home-container">
     <nav class="top-nav">
-      <div>
+      <div class="title-wrapper">
         <h1>LatamPodcast</h1>
-        <p>Un simple listado con los mejores podcast latinoamericanos en español.</p>
+        <p class="subtitle">Un simple listado con los mejores podcast latinoamericanos en español.</p>
       </div>
       <div>
         <button class="burger-button">
