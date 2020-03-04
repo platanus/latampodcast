@@ -2,3 +2,10 @@
 
 @import "./theme/colors";
 @import "./podcasts/form";
+@import './pages/home';
+
+h1, h2, h3, h4, h5 h6, p, span, div {
+  word-break: break-word;
+  color: #3a3b3c;
+  font-family: 'LatoLatinWeb',Avenir,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
