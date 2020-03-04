@@ -12,8 +12,8 @@ import "bootstrap"
 
 import "../stylesheets/application"
 
-import "./podcasts/form"
-import "./home/home"
+import "podcasts/form"
+import "home/home"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"').tooltip();

@@ -18,7 +18,6 @@ class PodcastsController < ApplicationController
   def create
     new_params = podcast_params
     new_params[:user_id] = current_user.id
-    puts new_params
     @podcast = Podcast.create(new_params)
 
     redirect_to root_path
