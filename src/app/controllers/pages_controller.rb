@@ -1,6 +1,7 @@
 class PagesController < ActionController::Base
   def home
     @podcasts = Podcast.all
+    # To Do: Move sections and subsections to DB
     @sections = [
       {
         title: '¿Qué es un podcast?',
