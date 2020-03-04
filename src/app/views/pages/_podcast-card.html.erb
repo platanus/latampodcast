@@ -1,5 +1,5 @@
 <% @podcasts.each do |podcast| %>
-  <div class="podcast-container">
+  <a href="<%= podcast.url || '#' %>" class="podcast-container">
     <%= image_tag("#{podcast.image_slug}") %>
     <div class="podcast-text-container">
       <h2><%= podcast.title %></h2>
@@ -10,5 +10,5 @@
         <p><%= '#Features' %></p>
       </div>
     </div>
-  </div>
+  </a>
 <% end %>
